@@ -13,8 +13,8 @@ export class PanierPage {
   constructor(page: Page) {
     this.page = page;
     this.cartIcon = page.locator("#shopping_cart_container a");
-    this.listItems = page.locator("#cart_contents_container div");
-    this.addToCartButton = page.locator("#add-to-cart-sauce-labs-backpack");
+    this.listItems = page.locator(".cart_item_label");
+    this.addToCartButton = page.locator("//button[@id='add-to-cart-sauce-labs-bike-light']");
     this.loginPage = new LoginPage(page);
   }
 

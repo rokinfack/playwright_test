@@ -7,7 +7,7 @@ export  class AllItemsPages{
     readonly clickOnAllProductsbtn: Locator;
     readonly closeHumburgerBtn: Locator;
     readonly getTitleEl: Locator;
-    readonly firstProductEl: Locator;
+    readonly productsEl: Locator;
 
     constructor(page: Page){
         this.page = page;
@@ -15,11 +15,7 @@ export  class AllItemsPages{
         this.clickOnAllProductsbtn = page.locator("[data-test='inventory-sidebar-link']")
         this.closeHumburgerBtn = page.locator("[id='react-burger-cross-btn']")
         this.getTitleEl = page.locator("//span[@data-test='title']")
-        this.firstProductEl = page.locator("[data-test='inventory-item-name']")
-    }
-
-    async goto(link: string){
-        return await this.page.goto(link);
+        this.productsEl = page.locator("[data-test='inventory-item']")
     }
 
     async clickOnHumburger(){
@@ -36,10 +32,12 @@ export  class AllItemsPages{
         return await this.getTitleEl.textContent();
     }
     
-    async isFirstProductDisplay() {
-        // Vérifie si le premier produit est visible sur la page
-        const isVisible = await this.firstProductEl.isVisible();
-        return isVisible;
+    async allProducts() {
+        const products = await this.productsEl.count();
+        if (products > 0) {
+            return true;
+        }
+        return false;
       }
     
 
