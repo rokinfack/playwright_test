@@ -19,7 +19,5 @@ test("All products items",{tag: "@regression"}, async ({ page }) => {
     const productTitle = await allProduct.getPageProductTitle();
     expect(productTitle).toBe('Products');
     
-    // await expect(allProduct.getPageProductTitle).toBe('Products');
-    
 })
 
