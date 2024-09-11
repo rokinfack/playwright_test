@@ -1,6 +1,6 @@
 // tests/panier.spec.ts
 import { test, expect } from '@playwright/test';
-import { PanierPage } from '../pages/panierPage';
+import { PanierPage } from '../pages/panier.page';
 
 test.describe('Tests du Panier', () => {
   
@@ -16,7 +16,7 @@ test.describe('Tests du Panier', () => {
     await panierPage.openCart();
 
     const isProductInCart = await panierPage.isProductInCart('Sauce Labs Backpack');
-    
+
     expect(isProductInCart).toBeTruthy();
   });
 });
