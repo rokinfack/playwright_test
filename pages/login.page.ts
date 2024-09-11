@@ -12,23 +12,29 @@ export default class LoginPage {
         this.page = page;
         this.usernameInput = page.locator("#user-name");
         this.passwordInput = page.locator("#password");
-        this.submitButon = page.locator('input[type="button"]');
+        this.submitButon = page.locator('input[type="submit"]');
     }
 
-    async goto(link:string){
-        await this.page.goto(link)
+    goto(link:string){
+      return  this.page.goto(link)
         
     }
 
-    async saisirPassword(password: string){
-        await this.passwordInput.fill(password)
+    saisirPassword(password: string){
+        return this.passwordInput.fill(password)
     }
 
-    async saisirUsername(username: string){
-        await this.usernameInput.fill(username)
+    saisirUsername(username: string){
+        return this.usernameInput.fill(username)
     }
 
-    async clickSubmitButton(){
-        await this.submitButon.click()
+    clickSubmitButton(){
+        return this.submitButon.click()
+    }
+
+    async doLogin(username: string, password: string){
+        await this.saisirUsername(username)
+        await this.saisirPassword(password)
+        await this.clickSubmitButton()
     }
 }
