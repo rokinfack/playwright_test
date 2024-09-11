@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test"
 import LoginPage from "../pages/login.page";
-import { DetailProduct } from "../pages/DetailProduct"
+import { DetailProduct } from "../pages/DetailProduct.page"
 
 
 
@@ -17,7 +17,7 @@ import { DetailProduct } from "../pages/DetailProduct"
 
         //la fonction dologin connecte le user et remplace les 2etapes de saisiirUsername et password
         await loginPage.doLogin("standard_user", "secret_sauce")
-        
+
         await detailProduct.clickdetailproductButonButton();
         await expect(page.locator('button[data-test="back-to-products"]')).toBeVisible();
     })
