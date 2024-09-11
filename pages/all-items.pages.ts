@@ -33,12 +33,14 @@ export  class AllItemsPages{
     }
 
     async getPageProductTitle(){
-        return await this.getTitleEl;
+        return await this.getTitleEl.textContent();
     }
-    async isFirstProductDisplay(){
-        return await this.firstProductEl;
-    }
-
+    
+    async isFirstProductDisplay() {
+        // Vérifie si le premier produit est visible sur la page
+        const isVisible = await this.firstProductEl.isVisible();
+        return isVisible;
+      }
     
 
 }
