@@ -14,7 +14,7 @@ export  class AllItemsPages{
         this.clickOnHumburgerBtn = page.locator("[id='react-burger-menu-btn']")
         this.clickOnAllProductsbtn = page.locator("[data-test='inventory-sidebar-link']")
         this.closeHumburgerBtn = page.locator("[id='react-burger-cross-btn']")
-        this.getTitleEl = page.locator("[data-test='data-test'")
+        this.getTitleEl = page.locator("//span[@data-test='title']")
         this.firstProductEl = page.locator("[data-test='inventory-item-name']")
     }
 

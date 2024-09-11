@@ -1,6 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
-
 export default class LoginPage {
     readonly page : Page;
     readonly usernameInput : Locator;
