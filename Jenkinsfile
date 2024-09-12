@@ -13,13 +13,13 @@ pipeline {
         stage('Run Cypress Tests') {
             steps {
                 
-                sh "npx playwright test --reporter=html"
+                sh "npx playwright test"
              }
         }
 }
  post {
         always {
-            junit 'test-results/**/*.json'
+            junit 'test-results/*.xml'
         }
     }
  
