@@ -29,7 +29,7 @@ test("All products items", { tag: "@regression" }, async ({ page }) => {
      await allProduct.closeHumburger()
      
      // Verifie que le titre de la page est présent
-     expect(productTitle).toBe('Products');
+     expect(productTitle).toBe('Productse');
  
      //  Verifie que 
      expect(allProduct.allProducts).toBeTruthy()

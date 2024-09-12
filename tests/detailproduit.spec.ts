@@ -19,7 +19,7 @@ import { DetailProduct } from "../pages/DetailProduct.page"
         await loginPage.doLogin("standard_user", "secret_sauce")
 
         await detailProduct.clickdetailproductButonButton();
-        await expect(page.locator('button[data-test="back-to-products"]')).toBeVisible();
+        await expect(page.locator('button[data-test="back-to-productsd"]')).toBeVisible();
     })
 
 
