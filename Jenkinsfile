@@ -19,7 +19,7 @@ pipeline {
 }
  post {
         always {
-            junit 'test-results/e2e-junit-results.xml'
+            junit 'test-results/**/*.xml'
         }
     }
  
